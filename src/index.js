@@ -1,4 +1,4 @@
-import './style.scss'
+import './style.scss';
 
 const root = document.createElement('div');
 document.body.appendChild(root);
@@ -117,7 +117,7 @@ request.onload = function () {
   } else {
     const errorMessage = document.createElement('div');
     errorMessage.textContent = 'Out of bounds! On the full!';
-    app.appendChild(errorMessage);
+    root.appendChild(errorMessage);
   }
 };
 request.send();
