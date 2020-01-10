@@ -1,0 +1,17 @@
+.container{
+ width: 30%;
+ margin: auto;
+}
+
+td {
+  text-align: center;
+}
+
+.clubName {
+  text-align: justify;
+}
+
+.extendedTable {
+  display: none;
+}
+
