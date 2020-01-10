@@ -1,4 +1,4 @@
-import './../src/style.css'
+import './style.scss'
 
 const root = document.createElement('div');
 document.body.appendChild(root);
