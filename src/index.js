@@ -1,3 +1,5 @@
+import './../src/style.css'
+
 const root = document.createElement('div');
 document.body.appendChild(root);
 

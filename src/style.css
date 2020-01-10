@@ -1,5 +1,5 @@
 .container{
- width: 30%;
+ width: 35%;
  margin: auto;
 }
 
@@ -8,7 +8,7 @@ td {
 }
 
 .clubName {
-  text-align: justify;
+  text-align: left;
 }
 
 .extendedTable {
