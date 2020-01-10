@@ -1,9 +1,10 @@
-const app = document.getElementById('root');
+const root = document.createElement('div');
+document.body.appendChild(root);
+
 
 const container = document.createElement('ul');
 container.setAttribute('class', 'container');
-
-app.appendChild(container);
+root.appendChild(container);
 
 // Create a request variable and assign a new XMLHttpRequest object to it.
 const request = new XMLHttpRequest();
