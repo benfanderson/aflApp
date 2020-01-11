@@ -1,4 +1,5 @@
 import './style.scss';
+import { addExtendedClass } from './ladderFuncs';
 
 const root = document.createElement('div');
 document.body.appendChild(root);
@@ -29,7 +30,6 @@ request.onload = function () {
     headRow.appendChild(clubHead);
     const playedHead = document.createElement('th');
     headRow.appendChild(playedHead);
-    playedHead.setAttribute('class', 'extendedTable');
     playedHead.innerHTML = 'Played';
     const winHead = document.createElement('th');
     headRow.appendChild(winHead);
@@ -38,19 +38,14 @@ request.onload = function () {
     headRow.appendChild(lossHead);
     lossHead.innerHTML = 'Losses';
     const drawsHead = document.createElement('th');
-    drawsHead.setAttribute('class', 'extendedTable');
     headRow.appendChild(drawsHead);
     drawsHead.innerHTML = 'Draws';
     const forHead = document.createElement('th');
     headRow.appendChild(forHead);
-    forHead.setAttribute('class', 'extendedTable');
     forHead.innerHTML = 'For';
     const agstHead = document.createElement('th');
-    headRow.appendChild(agstHead);
-    agstHead.setAttribute('class', 'extendedTable');
     agstHead.innerHTML = 'Against';
     const percentHead = document.createElement('th');
-    percentHead.setAttribute('class', 'extendedTable');
     headRow.appendChild(percentHead);
     percentHead.innerHTML = '%';
     const pointsHead = document.createElement('th');
@@ -68,7 +63,6 @@ request.onload = function () {
       club.innerHTML = team.name;
       const played = document.createElement('td');
       tableRow.appendChild(played);
-      played.setAttribute('class', 'extendedTable');
       played.innerHTML = team.played;
       const wins = document.createElement('td');
       tableRow.appendChild(wins);
@@ -77,24 +71,21 @@ request.onload = function () {
       tableRow.appendChild(losses);
       losses.innerHTML = team.losses;
       const draws = document.createElement('td');
-      draws.setAttribute('class', 'extendedTable');
       tableRow.appendChild(draws);
       draws.innerHTML = team.draws;
       const pointsFor = document.createElement('td');
       tableRow.appendChild(pointsFor);
-      pointsFor.setAttribute('class', 'extendedTable');
       pointsFor.innerHTML = team.for;
       const pointsAgst = document.createElement('td');
       tableRow.appendChild(pointsAgst);
-      pointsAgst.setAttribute('class', 'extendedTable');
       pointsAgst.innerHTML = team.against;
       const percentage = document.createElement('td');
       tableRow.appendChild(percentage);
-      percentage.setAttribute('class', 'extendedTable');
       percentage.innerHTML = team.percentage;
       const points = document.createElement('td');
       tableRow.appendChild(points);
       points.innerHTML = team.pts;
+      addExtendedClass(playedHead, playedHead, drawsHead, draws, forHead, pointsFor, agstHead, pointsAgst, percentHead, percentage);
     });
     const button = document.createElement('button');
     container.appendChild(button);
