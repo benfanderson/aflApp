@@ -9,6 +9,7 @@
     "rules": {
         "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
         "import/prefer-default-export": "off",
-        "max-len": [1, 150, 2, {ignoreComments: true}]
+        "max-len": [1, 150, 2, {"ignoreComments": true}],
+        "no-param-reassign": ["error", { "props": false }]
     }
 }

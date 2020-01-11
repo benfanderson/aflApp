@@ -16,6 +16,7 @@ const request = new XMLHttpRequest();
 request.open('GET', 'https://api.squiggle.com.au/?q=standings', true);
 
 
+// eslint-disable-next-line func-names
 request.onload = function () {
   const data = JSON.parse(this.response).standings;
 
@@ -44,6 +45,7 @@ request.onload = function () {
     headRow.appendChild(forHead);
     forHead.innerHTML = 'For';
     const agstHead = document.createElement('th');
+    headRow.appendChild(agstHead);
     agstHead.innerHTML = 'Against';
     const percentHead = document.createElement('th');
     headRow.appendChild(percentHead);
@@ -85,7 +87,7 @@ request.onload = function () {
       const points = document.createElement('td');
       tableRow.appendChild(points);
       points.innerHTML = team.pts;
-      addExtendedClass(playedHead, playedHead, drawsHead, draws, forHead, pointsFor, agstHead, pointsAgst, percentHead, percentage);
+      addExtendedClass(playedHead, played, drawsHead, draws, forHead, pointsFor, agstHead, pointsAgst, percentHead, percentage);
     });
     const button = document.createElement('button');
     container.appendChild(button);
