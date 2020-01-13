@@ -29,17 +29,15 @@ request.onload = function () {
 
     button.addEventListener('click', () => {
       const expandedColumns = document.getElementsByClassName('extendedTable');
-
-      for (let i = 0; i < expandedColumns.length; i++) {
-        const style = getComputedStyle(expandedColumns[i]);
-        if (style.display === 'none') {
-          expandedColumns[i].style.display = 'table-cell';
+      Array.from(expandedColumns).forEach((element) => {
+        if (getComputedStyle(element).display === 'none') {
+          element.style.display = 'table-cell';
           button.innerHTML = 'Show less info';
         } else {
-          expandedColumns[i].style.display = 'none';
-          button.innerHTML = 'Expand ladder';
+          element.style.display = 'none';
+          button.innerHTML = 'Show more info';
         }
-      }
+      });
     });
   } else {
     const errorMessage = document.createElement('div');
