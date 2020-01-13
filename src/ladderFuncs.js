@@ -1,8 +1,8 @@
 function addExtendedClass(...args) {
-  for (let i = 0; i < args.length; i++) {
-    args[i].setAttribute('class', 'extendedTable');
-    args[i].style.display = 'none';
-  }
+  args.forEach((dataField) => {
+    dataField.setAttribute('class', 'extendedTable');
+    dataField.style.display = 'none';
+  });
 }
 
 export function createTable() {
