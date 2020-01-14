@@ -6,7 +6,7 @@ function addExtendedClass(...args) {
 }
 
 export function createTable() {
-  const container = document.body.children[1].children[0];
+  const container = document.body.children[1];
   const aflTable = document.createElement('table');
   container.appendChild(aflTable);
   const headRow = document.createElement('tr');
@@ -43,7 +43,7 @@ export function createTable() {
 }
 
 export function tableData(data) {
-  const aflTable = document.body.children[1].children[0].children[0];
+  const aflTable = document.body.children[1].children[0];
   data.forEach((team) => {
     const tableRow = document.createElement('tr');
     aflTable.appendChild(tableRow);
@@ -79,5 +79,24 @@ export function tableData(data) {
     tableRow.appendChild(points);
     points.innerHTML = team.pts;
     addExtendedClass(played, draws, pointsFor, pointsAgst, percentage);
+  });
+}
+
+export function createButton() {
+  const container = document.body.children[1];
+  const button = document.createElement('button');
+  container.appendChild(button);
+  button.innerHTML = 'Expand ladder';
+  button.addEventListener('click', () => {
+    const expandedColumns = document.getElementsByClassName('extendedTable');
+    Array.from(expandedColumns).forEach((element) => {
+      if (getComputedStyle(element).display === 'none') {
+        element.style.display = 'table-cell';
+        button.innerHTML = 'Show less info';
+      } else {
+        element.style.display = 'none';
+        button.innerHTML = 'Show more info';
+      }
+    });
   });
 }
