@@ -7,8 +7,8 @@ document.body.appendChild(container);
 
 const request = new XMLHttpRequest();
 request.open('GET', 'https://api.squiggle.com.au/?q=standings', true);
-// eslint-disable-next-line func-names
-request.onload = function () {
+
+request.onload = function apiData() {
   const data = JSON.parse(this.response).standings;
 
   if (request.status >= 200 && request.status < 400) {
