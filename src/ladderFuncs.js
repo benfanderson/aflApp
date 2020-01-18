@@ -1,3 +1,6 @@
+// import Brisbane from './assets/images/Brisbane.jpg';
+import createImgSrc from './logoFuncs';
+
 function addExtendedClass(...args) {
   args.forEach((dataField) => {
     dataField.setAttribute('class', 'extendedTable');
@@ -13,6 +16,8 @@ export function createTable() {
   aflTable.appendChild(headRow);
   const rankHead = document.createElement('th');
   headRow.appendChild(rankHead);
+  const logoHead = document.createElement('th');
+  headRow.appendChild(logoHead);
   const clubHead = document.createElement('th');
   headRow.appendChild(clubHead);
   const playedHead = document.createElement('th');
@@ -50,6 +55,11 @@ export function tableData(data) {
     const rank = document.createElement('td');
     tableRow.appendChild(rank);
     rank.innerHTML = `${team.rank}. `;
+    const logo = document.createElement('td');
+    tableRow.appendChild(logo);
+    const logoImg = document.createElement('img');
+    logo.appendChild(logoImg);
+    logoImg.src = createImgSrc(team.name);
     const club = document.createElement('td');
     tableRow.appendChild(club);
     club.setAttribute('class', 'clubName');
