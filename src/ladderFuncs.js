@@ -59,6 +59,7 @@ export function tableData(data) {
     tableRow.appendChild(logo);
     const logoImg = document.createElement('img');
     logo.appendChild(logoImg);
+    logoImg.setAttribute('class', 'clubLogo');
     logoImg.src = createImgSrc(team.name);
     const club = document.createElement('td');
     tableRow.appendChild(club);
