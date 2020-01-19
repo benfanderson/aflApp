@@ -1,4 +1,3 @@
-// import Brisbane from './assets/images/Brisbane.jpg';
 import createImgSrc from './logoFuncs';
 
 function addExtendedClass(...args) {
@@ -48,7 +47,7 @@ export function createTable() {
 }
 
 export function tableData(data) {
-  const aflTable = document.body.children[1].children[0];
+  const aflTable = document.body.children[1].children[1];
   data.forEach((team) => {
     const tableRow = document.createElement('tr');
     aflTable.appendChild(tableRow);

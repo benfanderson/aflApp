@@ -1,9 +1,15 @@
-import './style.scss';
+import '../style.scss';
 import { createTable, tableData, createButton } from './ladderFuncs';
+import thisYear from './yearFunc';
+
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 document.body.appendChild(container);
+
+const title = document.createElement('h1');
+container.appendChild(title);
+title.innerHTML = `${thisYear()} AFL Premiership Season`;
 
 const request = new XMLHttpRequest();
 request.open('GET', 'https://api.squiggle.com.au/?q=standings', true);
