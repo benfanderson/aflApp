@@ -1,0 +1,13 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "extends": ["airbnb"],
+    "rules": {
+        "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+        "no-param-reassign": ["error", { "props": false }]
+    }
+}
