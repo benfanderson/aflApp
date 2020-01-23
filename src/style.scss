@@ -1,14 +1,31 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('./assets/fonts/open-sans-v17-latin-regular.woff2') format('woff2'),
+    url('./assets/fonts/open-sans-v17-latin-regular.woff') format('woff');
+}
+
+$blue: #003366;
+$light-blue: #6699CC;
+$dark-blue: #000044;
+
 .container{
  width: 95%;
  margin: auto;
+ font-family: 'Open Sans';
 }
 
 h1{
   text-align: center;
+  color: $blue;
 }
 
 button {
-  background-color: rgb(185, 183, 183);
+  background-color: $light-blue;
+  color: white;
+  border-radius: 12px;
 }
 
 table {
@@ -18,17 +35,18 @@ table {
 }
 
 tr{
-  border-bottom: gray 1px solid;
+  border-bottom: $dark-blue 2.5px solid;
 }
 
 th{
-  padding: 0.7em 0.1em;
+  padding: 0.7em 0.4em;
 }
 
 td {
   text-align: center;
   font-size: 1em;
   padding: 0.7em 0.4em;
+  color: $blue;
 }
 
 .clubLogo {
