@@ -70,12 +70,12 @@ td {
 
   th{
     font-size: 1.5em;
-    padding: 1.3em 0.9em;
+    padding: 1em 0.9em;
   }
   
   td {
     font-size: 1.5em;
-    padding: 1.3em 0.9em;
+    padding: 1em 0.9em;
   }
 
 }
@@ -84,7 +84,11 @@ td {
 @media (min-width: 1000px) {
   .container{
     width: 50%;
-   }
+  }
+
+  .clubLogo {
+    height: 5vh;
+  }
 
 }
 
