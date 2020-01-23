@@ -18,36 +18,37 @@ export function createTable() {
   const logoHead = document.createElement('th');
   headRow.appendChild(logoHead);
   const clubHead = document.createElement('th');
+  clubHead.setAttribute('class', 'clubName');
   headRow.appendChild(clubHead);
   const playedHead = document.createElement('th');
   headRow.appendChild(playedHead);
-  playedHead.innerHTML = 'Played';
+  playedHead.innerHTML = 'P';
   const winHead = document.createElement('th');
   headRow.appendChild(winHead);
-  winHead.innerHTML = 'Wins';
+  winHead.innerHTML = 'W';
   const lossHead = document.createElement('th');
   headRow.appendChild(lossHead);
-  lossHead.innerHTML = 'Losses';
+  lossHead.innerHTML = 'L';
   const drawsHead = document.createElement('th');
   headRow.appendChild(drawsHead);
-  drawsHead.innerHTML = 'Draws';
+  drawsHead.innerHTML = 'D';
   const forHead = document.createElement('th');
   headRow.appendChild(forHead);
-  forHead.innerHTML = 'For';
+  forHead.innerHTML = 'PF';
   const agstHead = document.createElement('th');
   headRow.appendChild(agstHead);
-  agstHead.innerHTML = 'Against';
+  agstHead.innerHTML = 'PA';
   const percentHead = document.createElement('th');
   headRow.appendChild(percentHead);
   percentHead.innerHTML = '%';
   const pointsHead = document.createElement('th');
   headRow.appendChild(pointsHead);
-  pointsHead.innerHTML = 'Points';
+  pointsHead.innerHTML = 'Pts';
   addExtendedClass(playedHead, drawsHead, forHead, agstHead, percentHead);
 }
 
 export function tableData(data) {
-  const aflTable = document.body.children[1].children[1];
+  const aflTable = document.body.children[1].children[2];
   data.forEach((team) => {
     const tableRow = document.createElement('tr');
     aflTable.appendChild(tableRow);
@@ -96,7 +97,7 @@ export function createButton() {
   const container = document.body.children[1];
   const button = document.createElement('button');
   container.appendChild(button);
-  button.innerHTML = 'Expand ladder';
+  button.innerHTML = 'Show more info';
   button.addEventListener('click', () => {
     const expandedColumns = document.getElementsByClassName('extendedTable');
     Array.from(expandedColumns).forEach((element) => {
@@ -106,6 +107,14 @@ export function createButton() {
       } else {
         element.style.display = 'none';
         button.innerHTML = 'Show more info';
+      }
+    });
+    const clubName = document.getElementsByClassName('clubName');
+    Array.from(clubName).forEach((element) => {
+      if (getComputedStyle(element).display === 'none') {
+        element.style.display = 'table-cell';
+      } else {
+        element.style.display = 'none';
       }
     });
   });

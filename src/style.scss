@@ -1,19 +1,72 @@
 .container{
- width: 35%;
+ width: 95%;
  margin: auto;
+}
+
+h1{
+  text-align: center;
+}
+
+button {
+  background-color: rgb(185, 183, 183);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+tr{
+  border-bottom: gray 1px solid;
+}
+
+th{
+  padding: 0.7em 0.1em;
 }
 
 td {
   text-align: center;
+  font-size: 1em;
+  padding: 0.7em 0.4em;
 }
 
 .clubLogo {
-  width: 2.5vw;
+  height: 4vh;
+  width: auto;
 }
 
 .clubName {
   text-align: left;
 }
 
+/*View for tablet*/
+@media (min-width: 479px) {
+  h1{
+    font-size: 3em;
+  }
 
+  button {
+    font-size: 1em;
+  }
+
+  th{
+    font-size: 1.5em;
+    padding: 1.3em 0.9em;
+  }
+  
+  td {
+    font-size: 1.5em;
+    padding: 1.3em 0.9em;
+  }
+
+}
+
+/*View for desktop*/
+@media (min-width: 1000px) {
+  .container{
+    width: 50%;
+   }
+
+}
 
