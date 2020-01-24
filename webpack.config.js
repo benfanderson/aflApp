@@ -2,7 +2,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // 1
+  devtool: 'source-map',
   entry: './src/scripts/index.js',
   module: {
     rules: [
@@ -41,13 +41,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js'],
   },
-  // 2
   output: {
     path: `${__dirname}/dist`,
     publicPath: '/',
     filename: 'bundle.js',
   },
-  // 3
   devServer: {
     contentBase: './dist',
   },
