@@ -1,9 +1,6 @@
 {
   "name": "aflapi",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.10.0"
-  },
   "description": "Using the AFL API from Squiggle to create a simple AFL ladder App",
   "main": "index.js",
   "scripts": {
