@@ -28,4 +28,4 @@ request.onload = function apiData() {
 
 request.send();
 
-require('http').set(('port', process.env.PORT || 3000));
+require('http').set('port', process.env.PORT || 3000);
