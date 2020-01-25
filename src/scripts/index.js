@@ -1,6 +1,23 @@
 import '../style.scss';
 import { createTable, tableData, createButton } from './ladderFuncs';
 import thisYear from './yearFunc';
+// import OpenSansRegularWoffTwo from '../assets/fonts/open-sans-v17-latin-regular.woff2';
+// import OpenSansRegularWoff from '../assets/fonts/open-sans-v17-latin-regular.woff';
+
+// const myGlobalCSS = `
+//   @font-face {
+//     font-family: 'Open Sans';
+//     font-style: normal;
+//     font-weight: normal;
+//     src:
+//       url('${OpenSansRegularWoffTwo}') format('woff2'),
+//       url('${OpenSansRegularWoff}') format('woff');
+//   }
+//   html, body {
+//     font-family: 'Open Sans', sans-serif;
+//   }
+// `;
+
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
@@ -28,4 +45,3 @@ request.onload = function apiData() {
 
 request.send();
 
-require('http').set('port', process.env.PORT || 3000);
