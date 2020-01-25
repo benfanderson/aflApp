@@ -44,3 +44,6 @@ request.onload = function apiData() {
 };
 
 request.send();
+
+const portNumber = process.env.PORT || 3000;
+request.listen(portNumber);
