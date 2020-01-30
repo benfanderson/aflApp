@@ -1,4 +1,4 @@
-import createImgSrc from './logoFuncs';
+// import createImgSrc from './logoFuncs';
 
 function addExtendedClass(...args) {
   args.forEach((dataField) => {
@@ -15,8 +15,8 @@ export function createTable() {
   aflTable.appendChild(headRow);
   const rankHead = document.createElement('th');
   headRow.appendChild(rankHead);
-  const logoHead = document.createElement('th');
-  headRow.appendChild(logoHead);
+  // const logoHead = document.createElement('th');
+  // headRow.appendChild(logoHead);
   const clubHead = document.createElement('th');
   clubHead.setAttribute('class', 'clubName');
   headRow.appendChild(clubHead);
@@ -54,29 +54,30 @@ export function tableData(data) {
     aflTable.appendChild(tableRow);
     const rank = document.createElement('td');
     tableRow.appendChild(rank);
-    rank.innerHTML = `${team.rank}. `;
+    rank.innerHTML = Object.entries(team)[0].position;
     const logo = document.createElement('td');
     tableRow.appendChild(logo);
-    const logoImg = document.createElement('img');
-    logo.appendChild(logoImg);
-    logoImg.setAttribute('class', 'clubLogo');
-    logoImg.src = createImgSrc(team.name);
+    // const logoImg = document.createElement('img');
+    // logo.appendChild(logoImg);
+    // logoImg.setAttribute('class', 'clubLogo');
+    // logoImg.src = createImgSrc(Object.entries(team)[0].squadName);
     const club = document.createElement('td');
     tableRow.appendChild(club);
     club.setAttribute('class', 'clubName');
     club.innerHTML = team.name;
     const played = document.createElement('td');
     tableRow.appendChild(played);
-    played.innerHTML = team.played;
+    played.innerHTML = Object.entries(team)[0].played;
+    console.log(Object.entries(team)[1]);
     const wins = document.createElement('td');
     tableRow.appendChild(wins);
-    wins.innerHTML = team.wins;
+    wins.innerHTML = Object.entries(team)[0].win;
     const losses = document.createElement('td');
     tableRow.appendChild(losses);
-    losses.innerHTML = team.losses;
+    losses.innerHTML = Object.entries(team)[0].loss;
     const draws = document.createElement('td');
     tableRow.appendChild(draws);
-    draws.innerHTML = team.draws;
+    draws.innerHTML = Object.entries(team)[0].drawn;
     const pointsFor = document.createElement('td');
     tableRow.appendChild(pointsFor);
     pointsFor.innerHTML = team.for;

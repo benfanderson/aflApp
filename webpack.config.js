@@ -27,6 +27,7 @@ module.exports = {
           loader: 'url-loader',
         },
       },
+      { test: /\.xml$/, loader: 'xml-loader' },
     ],
   },
   plugins: [

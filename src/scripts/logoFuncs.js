@@ -19,7 +19,7 @@ import WesternBulldogs from '../assets/images/WesternBulldogs.svg';
 
 export default function createImgSrc(club) {
   let logo;
-  if (club === 'Adelaide') {
+  if (club === 'Adelaide Crows') {
     logo = Adelaide;
   } if (club === 'Brisbane Lions') {
     logo = Brisbane;
@@ -31,11 +31,11 @@ export default function createImgSrc(club) {
     logo = Essendon;
   } if (club === 'Fremantle') {
     logo = Fremantle;
-  } if (club === 'Geelong') {
+  } if (club === 'Geelong Cats') {
     logo = Geelong;
-  } if (club === 'Gold Coast') {
+  } if (club === 'Gold Coast Suns') {
     logo = GoldCoast;
-  } if (club === 'Greater Western Sydney') {
+  } if (club === 'GWS Giants') {
     logo = GreaterWesternSydney;
   } if (club.includes('Hawthorn')) {
     logo = Hawthorn;
@@ -49,7 +49,7 @@ export default function createImgSrc(club) {
     logo = Richmond;
   } if (club === 'St Kilda') {
     logo = StKilda;
-  } if (club === 'Sydney') {
+  } if (club === 'Sydney Swans') {
     logo = Sydney;
   } if (club === 'West Coast') {
     logo = WestCoast;
