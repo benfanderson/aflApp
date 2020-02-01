@@ -59,7 +59,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com/) and [
 
  
 
-```npm run start```
+```npm run dev```
 
  
 
