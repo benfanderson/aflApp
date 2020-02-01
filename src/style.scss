@@ -7,9 +7,14 @@
     url('./assets/fonts/open-sans-v17-latin-regular.woff') format('woff');
 }
 
-$blue: #003366;
-$light-blue: #6699CC;
-$dark-blue: #000044;
+$text-colour: #003366;
+$button-colour: #6699CC;
+$border-line: #000044;
+
+%mobile-text {
+  font-size: 0.8em;
+  padding: 0.7em 0.3em;
+}
 
 .container{
  width: 95%;
@@ -19,11 +24,11 @@ $dark-blue: #000044;
 
 h1{
   text-align: center;
-  color: $blue;
+  color: $text-colour;
 }
 
 button {
-  background-color: $light-blue;
+  background-color: $button-colour;
   color: white;
   border-radius: 12px;
   font-size: 0.75em;
@@ -36,18 +41,17 @@ table {
 }
 
 tr{
-  border-bottom: $dark-blue 2.5px solid;
+  border-bottom: $border-line 2.5px solid;
 }
 
 th{
-  padding: 0.7em 0.4em;
+  @extend %mobile-text
 }
 
 td {
   text-align: center;
-  font-size: 1em;
-  padding: 0.7em 0.4em;
-  color: $blue;
+  @extend %mobile-text;
+  color: $text-colour;
 }
 
 .clubLogo {
@@ -61,6 +65,12 @@ td {
 
 /*View for tablet*/
 @media (min-width: 479px) {
+
+  @mixin tablet-text {
+    font-size: 1.3em;
+    padding: 1em 0.8em;
+  }
+
   h1{
     font-size: 3em;
   }
@@ -70,15 +80,12 @@ td {
   }
 
   th{
-    font-size: 1.5em;
-    padding: 1em 0.9em;
+    @include tablet-text;
   }
   
   td {
-    font-size: 1.5em;
-    padding: 1em 0.9em;
+    @include tablet-text;
   }
-
 }
 
 /*View for desktop*/

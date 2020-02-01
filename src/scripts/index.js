@@ -12,15 +12,8 @@ document.body.appendChild(container);
 
 const xmlData = require('../data.xml').report.ladder;
 
-const championData = Object.entries(xmlData)[0][1].squad;
+const championData = Object.values(xmlData[0].squad);
 
-// const ladderData = Object.entries(championData[0]);
-
-// const team = Object.entries(championData[1]);
-
-// const teamData = Object.entries(team);
-
-console.log(championData);
 
 const title = document.createElement('h1');
 container.appendChild(title);
@@ -29,15 +22,6 @@ createButton();
 createTable();
 tableData(championData);
 
-// const myArray = Object.entries(zero);
-
-
-// console.log(myArray);
-
-// const data = '../data.xml';
-// const parser = new DOMParser();
-// const xmlDoc = parser.parseFromString(data, 'text/xml');
-// console.log(xmlDoc);
 
 // const request = new XMLHttpRequest();
 // request.open('GET', 'https://api.squiggle.com.au/?q=standings;format=xml', true);

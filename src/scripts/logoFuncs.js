@@ -37,7 +37,7 @@ export default function createImgSrc(club) {
     logo = GoldCoast;
   } if (club === 'GWS Giants') {
     logo = GreaterWesternSydney;
-  } if (club.includes('Hawthorn')) {
+  } if (club === 'Hawthorn') {
     logo = Hawthorn;
   } if (club === 'Melbourne') {
     logo = Melbourne;
@@ -51,7 +51,7 @@ export default function createImgSrc(club) {
     logo = StKilda;
   } if (club === 'Sydney Swans') {
     logo = Sydney;
-  } if (club === 'West Coast') {
+  } if (club === 'West Coast Eagles') {
     logo = WestCoast;
   } if (club === 'Western Bulldogs') {
     logo = WesternBulldogs;

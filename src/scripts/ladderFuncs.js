@@ -1,4 +1,4 @@
-// import createImgSrc from './logoFuncs';
+import createImgSrc from './logoFuncs';
 
 function addExtendedClass(...args) {
   args.forEach((dataField) => {
@@ -15,8 +15,8 @@ export function createTable() {
   aflTable.appendChild(headRow);
   const rankHead = document.createElement('th');
   headRow.appendChild(rankHead);
-  // const logoHead = document.createElement('th');
-  // headRow.appendChild(logoHead);
+  const logoHead = document.createElement('th');
+  headRow.appendChild(logoHead);
   const clubHead = document.createElement('th');
   clubHead.setAttribute('class', 'clubName');
   headRow.appendChild(clubHead);
@@ -50,46 +50,46 @@ export function createTable() {
 export function tableData(data) {
   const aflTable = document.body.children[1].children[2];
   data.forEach((team) => {
+    const teamInfo = Object.values(team)[0];
     const tableRow = document.createElement('tr');
     aflTable.appendChild(tableRow);
     const rank = document.createElement('td');
     tableRow.appendChild(rank);
-    rank.innerHTML = Object.entries(team)[0].position;
+    rank.innerHTML = teamInfo.position;
     const logo = document.createElement('td');
     tableRow.appendChild(logo);
-    // const logoImg = document.createElement('img');
-    // logo.appendChild(logoImg);
-    // logoImg.setAttribute('class', 'clubLogo');
-    // logoImg.src = createImgSrc(Object.entries(team)[0].squadName);
+    const logoImg = document.createElement('img');
+    logo.appendChild(logoImg);
+    logoImg.setAttribute('class', 'clubLogo');
+    logoImg.src = createImgSrc(teamInfo.squadName);
     const club = document.createElement('td');
     tableRow.appendChild(club);
     club.setAttribute('class', 'clubName');
-    club.innerHTML = team.name;
+    club.innerHTML = teamInfo.squadName;
     const played = document.createElement('td');
     tableRow.appendChild(played);
-    played.innerHTML = Object.entries(team)[0].played;
-    console.log(Object.entries(team)[1]);
+    played.innerHTML = teamInfo.played;
     const wins = document.createElement('td');
     tableRow.appendChild(wins);
-    wins.innerHTML = Object.entries(team)[0].win;
+    wins.innerHTML = teamInfo.win;
     const losses = document.createElement('td');
     tableRow.appendChild(losses);
-    losses.innerHTML = Object.entries(team)[0].loss;
+    losses.innerHTML = teamInfo.loss;
     const draws = document.createElement('td');
     tableRow.appendChild(draws);
-    draws.innerHTML = Object.entries(team)[0].drawn;
+    draws.innerHTML = teamInfo.drawn;
     const pointsFor = document.createElement('td');
     tableRow.appendChild(pointsFor);
-    pointsFor.innerHTML = team.for;
+    pointsFor.innerHTML = teamInfo.ptsFor;
     const pointsAgst = document.createElement('td');
     tableRow.appendChild(pointsAgst);
-    pointsAgst.innerHTML = team.against;
+    pointsAgst.innerHTML = teamInfo.ptsAgainst;
     const percentage = document.createElement('td');
     tableRow.appendChild(percentage);
-    percentage.innerHTML = team.percentage;
+    percentage.innerHTML = teamInfo.percentage;
     const points = document.createElement('td');
     tableRow.appendChild(points);
-    points.innerHTML = team.pts;
+    points.innerHTML = teamInfo.points;
     addExtendedClass(played, draws, pointsFor, pointsAgst, percentage);
   });
 }
