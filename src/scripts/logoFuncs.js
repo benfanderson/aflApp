@@ -17,9 +17,10 @@ import Sydney from '../assets/images/Sydney.svg';
 import WestCoast from '../assets/images/WestCoast.svg';
 import WesternBulldogs from '../assets/images/WesternBulldogs.svg';
 
+// For Champion Data version: Replace createImGSrc function with function noted out below
 export default function createImgSrc(club) {
   let logo;
-  if (club === 'Adelaide Crows') {
+  if (club === 'Adelaide') {
     logo = Adelaide;
   } if (club === 'Brisbane Lions') {
     logo = Brisbane;
@@ -31,11 +32,11 @@ export default function createImgSrc(club) {
     logo = Essendon;
   } if (club === 'Fremantle') {
     logo = Fremantle;
-  } if (club === 'Geelong Cats') {
+  } if (club === 'Geelong') {
     logo = Geelong;
-  } if (club === 'Gold Coast Suns') {
+  } if (club === 'Gold Coast') {
     logo = GoldCoast;
-  } if (club === 'GWS Giants') {
+  } if (club === 'Greater Western Sydney') {
     logo = GreaterWesternSydney;
   } if (club === 'Hawthorn') {
     logo = Hawthorn;
@@ -49,12 +50,54 @@ export default function createImgSrc(club) {
     logo = Richmond;
   } if (club === 'St Kilda') {
     logo = StKilda;
-  } if (club === 'Sydney Swans') {
+  } if (club === 'Sydney') {
     logo = Sydney;
-  } if (club === 'West Coast Eagles') {
+  } if (club === 'West Coast') {
     logo = WestCoast;
   } if (club === 'Western Bulldogs') {
     logo = WesternBulldogs;
   }
   return logo;
 }
+
+// export default function createImgSrc(club) {
+//   let logo;
+//   if (club === 'Adelaide Crows') {
+//     logo = Adelaide;
+//   } if (club === 'Brisbane Lions') {
+//     logo = Brisbane;
+//   } if (club === 'Carlton') {
+//     logo = Carlton;
+//   } if (club === 'Collingwood') {
+//     logo = Collingwood;
+//   } if (club === 'Essendon') {
+//     logo = Essendon;
+//   } if (club === 'Fremantle') {
+//     logo = Fremantle;
+//   } if (club === 'Geelong Cats') {
+//     logo = Geelong;
+//   } if (club === 'Gold Coast Suns') {
+//     logo = GoldCoast;
+//   } if (club === 'GWS Giants') {
+//     logo = GreaterWesternSydney;
+//   } if (club === 'Hawthorn') {
+//     logo = Hawthorn;
+//   } if (club === 'Melbourne') {
+//     logo = Melbourne;
+//   } if (club === 'North Melbourne') {
+//     logo = NorthMelbourne;
+//   } if (club === 'Port Adelaide') {
+//     logo = PortAdelaide;
+//   } if (club === 'Richmond') {
+//     logo = Richmond;
+//   } if (club === 'St Kilda') {
+//     logo = StKilda;
+//   } if (club === 'Sydney Swans') {
+//     logo = Sydney;
+//   } if (club === 'West Coast Eagles') {
+//     logo = WestCoast;
+//   } if (club === 'Western Bulldogs') {
+//     logo = WesternBulldogs;
+//   }
+//   return logo;
+// }
