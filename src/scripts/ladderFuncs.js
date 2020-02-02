@@ -107,6 +107,9 @@ export function tableData(data) {
 }
 
 export function createButton() {
+  if (window.matchMedia('(max-width: 479px)').matches) {
+    console.log('Boom!');
+  }
   const container = document.body.children[1];
   const button = document.createElement('button');
   container.appendChild(button);
@@ -123,12 +126,15 @@ export function createButton() {
       }
     });
     const clubName = document.getElementsByClassName('clubName');
-    Array.from(clubName).forEach((element) => {
-      if (getComputedStyle(element).display === 'none') {
-        element.style.display = 'table-cell';
-      } else {
-        element.style.display = 'none';
-      }
-    });
+
+    if (window.matchMedia('(max-width: 1000px)').matches) {
+      Array.from(clubName).forEach((element) => {
+        if (getComputedStyle(element).display === 'none') {
+          element.style.display = 'table-cell';
+        } else {
+          element.style.display = 'none';
+        }
+      });
+    }
   });
 }
