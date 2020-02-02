@@ -107,9 +107,6 @@ export function tableData(data) {
 }
 
 export function createButton() {
-  if (window.matchMedia('(max-width: 479px)').matches) {
-    console.log('Boom!');
-  }
   const container = document.body.children[1];
   const button = document.createElement('button');
   container.appendChild(button);
