@@ -1,25 +1,55 @@
-// import Adelaide from '../assets/images/Adelaide.svg';
-// import Brisbane from '../assets/images/Brisbane.svg';
-// import Carlton from '../assets/images/Carlton.svg';
-// import Collingwood from '../assets/images/Collingwood.svg';
-// import Essendon from '../assets/images/Essendon.svg';
-// import Fremantle from '../assets/images/Fremantle.svg';
-// import Geelong from '../assets/images/Geelong.svg';
-// import GoldCoast from '../assets/images/GoldCoast.svg';
-// import GreaterWesternSydney from '../assets/images/GreaterWesternSydney.svg';
-// import Hawthorn from '../assets/images/Hawthorn.svg';
-// import Melbourne from '../assets/images/Melbourne.svg';
-// import NorthMelbourne from '../assets/images/NorthMelbourne.svg';
-// import PortAdelaide from '../assets/images/PortAdelaide.svg';
-// import Richmond from '../assets/images/Richmond.svg';
-// import StKilda from '../assets/images/StKilda.svg';
-// import Sydney from '../assets/images/Sydney.svg';
-// import WestCoast from '../assets/images/WestCoast.svg';
-// import WesternBulldogs from '../assets/images/WesternBulldogs.svg';
 
-export default function createImgSrc(club) {
-  const logo = `../assets/images/${club.replace(/\s/g, '')}.svg`;
-  console.log(logo);
+const AdelaideCrows = require('../assets/images/AdelaideCrows.svg');
+const BrisbaneLions = require('../assets/images/BrisbaneLions.svg');
+const Carlton = require('../assets/images/Carlton.svg');
+const Collingwood = require('../assets/images/Collingwood.svg');
+const Essendon = require('../assets/images/Essendon.svg');
+const Fremantle = require('../assets/images/Fremantle.svg');
+const GeelongCats = require('../assets/images/GeelongCats.svg');
+const GoldCoastSuns = require('../assets/images/GoldCoastSuns.svg');
+const GWSGiants = require('../assets/images/GWSGiants.svg');
+const Hawthorn = require('../assets/images/Hawthorn.svg');
+const Melbourne = require('../assets/images/Melbourne.svg');
+const NorthMelbourne = require('../assets/images/NorthMelbourne.svg');
+const PortAdelaide = require('../assets/images/PortAdelaide.svg');
+const Richmond = require('../assets/images/Richmond.svg');
+const StKilda = require('../assets/images/StKilda.svg');
+const SydneySwans = require('../assets/images/SydneySwans.svg');
+const WestCoastEagles = require('../assets/images/WestCoastEagles.svg');
+const WesternBulldogs = require('../assets/images/WesternBulldogs.svg');
+
+
+const logoObj = {
+  AdelaideCrows,
+  BrisbaneLions,
+  Carlton,
+  Collingwood,
+  Essendon,
+  Fremantle,
+  GeelongCats,
+  GoldCoastSuns,
+  GWSGiants,
+  Hawthorn,
+  Melbourne,
+  NorthMelbourne,
+  PortAdelaide,
+  Richmond,
+  StKilda,
+  SydneySwans,
+  WestCoastEagles,
+  WesternBulldogs,
+};
+
+export default function createImgSrc(club, logos = logoObj) {
+  let logo = club.replace(/\s/g, '');
+  Object.keys(logos).forEach((key) => {
+    if (key === logo) {
+      // console.log(key);
+      // console.log(logos[key]);
+      logo = logos[key];
+      console.log(logo);
+    }
+  });
   // if (club === 'Adelaide Crows') {
   //   logo = Adelaide;
   // } if (club === 'Brisbane Lions') {
