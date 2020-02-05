@@ -1,60 +1,56 @@
-import Adelaide from '../assets/images/Adelaide.svg';
-import Brisbane from '../assets/images/Brisbane.svg';
-import Carlton from '../assets/images/Carlton.svg';
-import Collingwood from '../assets/images/Collingwood.svg';
-import Essendon from '../assets/images/Essendon.svg';
-import Fremantle from '../assets/images/Fremantle.svg';
-import Geelong from '../assets/images/Geelong.svg';
-import GoldCoast from '../assets/images/GoldCoast.svg';
-import GreaterWesternSydney from '../assets/images/GreaterWesternSydney.svg';
-import Hawthorn from '../assets/images/Hawthorn.svg';
-import Melbourne from '../assets/images/Melbourne.svg';
-import NorthMelbourne from '../assets/images/NorthMelbourne.svg';
-import PortAdelaide from '../assets/images/PortAdelaide.svg';
-import Richmond from '../assets/images/Richmond.svg';
-import StKilda from '../assets/images/StKilda.svg';
-import Sydney from '../assets/images/Sydney.svg';
-import WestCoast from '../assets/images/WestCoast.svg';
-import WesternBulldogs from '../assets/images/WesternBulldogs.svg';
+// This module creates the logo image for each club
 
-export default function createImgSrc(club) {
-  let logo;
-  if (club === 'Adelaide') {
-    logo = Adelaide;
-  } if (club === 'Brisbane Lions') {
-    logo = Brisbane;
-  } if (club === 'Carlton') {
-    logo = Carlton;
-  } if (club === 'Collingwood') {
-    logo = Collingwood;
-  } if (club === 'Essendon') {
-    logo = Essendon;
-  } if (club === 'Fremantle') {
-    logo = Fremantle;
-  } if (club === 'Geelong') {
-    logo = Geelong;
-  } if (club === 'Gold Coast') {
-    logo = GoldCoast;
-  } if (club === 'Greater Western Sydney') {
-    logo = GreaterWesternSydney;
-  } if (club.includes('Hawthorn')) {
-    logo = Hawthorn;
-  } if (club === 'Melbourne') {
-    logo = Melbourne;
-  } if (club === 'North Melbourne') {
-    logo = NorthMelbourne;
-  } if (club === 'Port Adelaide') {
-    logo = PortAdelaide;
-  } if (club === 'Richmond') {
-    logo = Richmond;
-  } if (club === 'St Kilda') {
-    logo = StKilda;
-  } if (club === 'Sydney') {
-    logo = Sydney;
-  } if (club === 'West Coast') {
-    logo = WestCoast;
-  } if (club === 'Western Bulldogs') {
-    logo = WesternBulldogs;
-  }
+const Adelaide = require('../assets/images/Adelaide.svg');
+const BrisbaneLions = require('../assets/images/BrisbaneLions.svg');
+const Carlton = require('../assets/images/Carlton.svg');
+const Collingwood = require('../assets/images/Collingwood.svg');
+const Essendon = require('../assets/images/Essendon.svg');
+const Fremantle = require('../assets/images/Fremantle.svg');
+const Geelong = require('../assets/images/Geelong.svg');
+const GoldCoast = require('../assets/images/GoldCoast.svg');
+const GreaterWesternSydney = require('../assets/images/GreaterWesternSydney.svg');
+const Hawthorn = require('../assets/images/Hawthorn.svg');
+const Melbourne = require('../assets/images/Melbourne.svg');
+const NorthMelbourne = require('../assets/images/NorthMelbourne.svg');
+const PortAdelaide = require('../assets/images/PortAdelaide.svg');
+const Richmond = require('../assets/images/Richmond.svg');
+const StKilda = require('../assets/images/StKilda.svg');
+const Sydney = require('../assets/images/Sydney.svg');
+const WestCoast = require('../assets/images/WestCoast.svg');
+const WesternBulldogs = require('../assets/images/WesternBulldogs.svg');
+
+// Create the logo images obect
+const logoObj = {
+  Adelaide,
+  BrisbaneLions,
+  Carlton,
+  Collingwood,
+  Essendon,
+  Fremantle,
+  Geelong,
+  GoldCoast,
+  GreaterWesternSydney,
+  Hawthorn,
+  Melbourne,
+  NorthMelbourne,
+  PortAdelaide,
+  Richmond,
+  StKilda,
+  Sydney,
+  WestCoast,
+  WesternBulldogs,
+};
+
+export default function createImgSrc(club, logos = logoObj) {
+  // Remove white space from names of clubs in API
+  let logo = club.replace(/\s/g, '');
+  Object.keys(logos).forEach((key) => {
+    // Compares club name to key of each property in logo images obect
+    if (key === logo) {
+      // If the club names matches the key, replace the variable logo with the relevant image
+      const { default: pic } = logos[key];
+      logo = pic;
+    }
+  });
   return logo;
 }
