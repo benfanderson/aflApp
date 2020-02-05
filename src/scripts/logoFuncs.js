@@ -1,3 +1,4 @@
+// This module creates the logo image for each club
 
 const AdelaideCrows = require('../assets/images/AdelaideCrows.svg');
 const BrisbaneLions = require('../assets/images/BrisbaneLions.svg');
@@ -18,7 +19,7 @@ const SydneySwans = require('../assets/images/SydneySwans.svg');
 const WestCoastEagles = require('../assets/images/WestCoastEagles.svg');
 const WesternBulldogs = require('../assets/images/WesternBulldogs.svg');
 
-
+// Create the logo images obect
 const logoObj = {
   AdelaideCrows,
   BrisbaneLions,
@@ -41,51 +42,15 @@ const logoObj = {
 };
 
 export default function createImgSrc(club, logos = logoObj) {
+  // Remove white space from names of clubs in API
   let logo = club.replace(/\s/g, '');
   Object.keys(logos).forEach((key) => {
+    // Compares club name to key of each property in logo images obect
     if (key === logo) {
-      // console.log(key);
-      // console.log(logos[key]);
-      logo = logos[key];
-      console.log(logo);
+      // If the club names matches the key, replace the variable logo with the relevant image
+      const { default: pic } = logos[key];
+      logo = pic;
     }
   });
-  // if (club === 'Adelaide Crows') {
-  //   logo = Adelaide;
-  // } if (club === 'Brisbane Lions') {
-  //   logo = Brisbane;
-  // } if (club === 'Carlton') {
-  //   logo = Carlton;
-  // } if (club === 'Collingwood') {
-  //   logo = Collingwood;
-  // } if (club === 'Essendon') {
-  //   logo = Essendon;
-  // } if (club === 'Fremantle') {
-  //   logo = Fremantle;
-  // } if (club === 'Geelong Cats') {
-  //   logo = Geelong;
-  // } if (club === 'Gold Coast Suns') {
-  //   logo = GoldCoast;
-  // } if (club === 'GWS Giants') {
-  //   logo = GreaterWesternSydney;
-  // } if (club === 'Hawthorn') {
-  //   logo = Hawthorn;
-  // } if (club === 'Melbourne') {
-  //   logo = Melbourne;
-  // } if (club === 'North Melbourne') {
-  //   logo = NorthMelbourne;
-  // } if (club === 'Port Adelaide') {
-  //   logo = PortAdelaide;
-  // } if (club === 'Richmond') {
-  //   logo = Richmond;
-  // } if (club === 'St Kilda') {
-  //   logo = StKilda;
-  // } if (club === 'Sydney Swans') {
-  //   logo = Sydney;
-  // } if (club === 'West Coast Eagles') {
-  //   logo = WestCoast;
-  // } if (club === 'Western Bulldogs') {
-  //   logo = WesternBulldogs;
-  // }
   return logo;
 }
