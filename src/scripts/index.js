@@ -9,25 +9,19 @@ const container = document.createElement('div');
 container.setAttribute('class', 'container');
 document.body.appendChild(container);
 
-const request = new XMLHttpRequest();
-request.open('GET', 'https://api.squiggle.com.au/?q=standings;format=xml', true);
-
-request.onload = function apiData() {
-  const jsonObject = parser.parse(this.response);
-  const data = jsonObject.standings.anon;
-
-  if (request.status >= 200 && request.status < 400) {
+fetch('https://api.squiggle.com.au/?q=standings;format=xml')
+  .then((resp) => resp.text())
+  .then((data) => {
+    const jsonObject = parser.parse(data).standings.anon;
     const title = document.createElement('h1');
     container.appendChild(title);
     title.innerHTML = `${thisYear()} AFL Premiership Season`;
     createButton();
     createTable();
-    tableData(data);
-  } else {
+    tableData(jsonObject);
+  })
+  .catch(() => {
     const errorMessage = document.createElement('div');
     errorMessage.textContent = 'Out of bounds! On the full!';
     container.appendChild(errorMessage);
-  }
-};
-
-request.send();
+  });
